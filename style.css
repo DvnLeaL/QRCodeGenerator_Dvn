@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
-
+/* Base Styles */
 * {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -8,17 +7,17 @@
 }
 
 body {
-    /* Linear gradient background */
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    background: linear-gradient(to right, #6a11cb, #2575fc); /* Linear background gradient */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    min-height: 100vh;
+    padding: 20px;
 }
 
+/* Container Styling */
 .container {
-    width: 90%;
+    width: 100%;
     max-width: 400px;
     padding: 25px 35px;
     background: #fff;
@@ -27,6 +26,7 @@ body {
     text-align: center;
 }
 
+/* Input and Button Styling */
 .container p {
     font-weight: 600;
     font-size: 15px;
@@ -37,7 +37,7 @@ body {
     width: 100%;
     height: 50px;
     border: 1px solid #494eea;
-    outline: 0;
+    outline: none;
     padding: 10px;
     margin: 10px 0 20px;
     border-radius: 5px;
@@ -48,8 +48,8 @@ body {
     height: 50px;
     background: #494eea;
     color: #fff;
-    border: 0;
-    outline: 0;
+    border: none;
+    outline: none;
     border-radius: 5px;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
@@ -57,12 +57,15 @@ body {
     font-weight: 500;
 }
 
+/* Image Box Styling */
 #imgBox {
-    width: 200px;
+    width: 100%;
+    max-width: 200px;
+    margin: 10px auto;
     border-radius: 5px;
-    max-height: 0;
     overflow: hidden;
     transition: max-height 1s;
+    max-height: 0;
 }
 
 #imgBox img {
@@ -72,91 +75,34 @@ body {
 
 #imgBox.show-img {
     max-height: 300px;
-    margin: 10px auto;
+    border: 1px solid #d1d1d1;
 }
 
+/* Error Animation */
 .error {
     animation: shake 0.1s linear 10;
 }
 
 @keyframes shake {
-    0% {
+    0%, 100% {
         transform: translateX(0);
     }
-    25% {
+    25%, 75% {
         transform: translateX(-2px);
     }
     50% {
-        transform: translateX(0);
-    }
-    75% {
         transform: translateX(2px);
     }
-    100% {
-        transform: translateX(0);
-    }
 }
 
-/* Responsive styles */
-@media (max-width: 768px) {
+/* Responsive Design */
+@media (max-width: 600px) {
     .container {
-        width: 95%;
+        width: 100%;
         padding: 20px;
-        transform: translate(-50%, -50%);
     }
 
-    .container p {
-        font-size: 14px;
-    }
-
-    .container input {
+    .container input, .container button {
         height: 45px;
-        padding: 8px;
-        font-size: 14px;
-    }
-
-    .container button {
-        height: 45px;
-        font-size: 14px;
-        margin: 15px 0;
-    }
-
-    #imgBox {
-        width: 150px;
-    }
-
-    #imgBox.show-img {
-        max-height: 250px;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        width: 90%;
-        padding: 15px;
-    }
-
-    .container p {
-        font-size: 13px;
-    }
-
-    .container input {
-        height: 40px;
-        padding: 7px;
-        font-size: 13px;
-    }
-
-    .container button {
-        height: 40px;
-        font-size: 13px;
-        margin: 10px 0;
-    }
-
-    #imgBox {
-        width: 130px;
-    }
-
-    #imgBox.show-img {
-        max-height: 200px;
     }
 }
